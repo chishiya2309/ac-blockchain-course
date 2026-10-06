@@ -1,7 +1,9 @@
 import { ethers } from "ethers";
 
 async function main() {
-  const provider = new ethers.JsonRpcProvider("https://eth-sepolia.public.blastapi.io");
+  const provider = new ethers.JsonRpcProvider(
+    "https://eth-sepolia.g.alchemy.com/v2/demo"
+  );
 
   const abi = [
     "function getCount() public view returns (uint)",
