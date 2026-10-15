@@ -58,3 +58,6 @@ ts-node test.ts
 ---
 
 Chúc bạn học vui! 🚀
+## Hardhat 3 template
+
+Template độc lập với Counter, ERC20, Ignition, test và CI: [AC Hardhat Template](ac-hardhat-template/README.vi.md).

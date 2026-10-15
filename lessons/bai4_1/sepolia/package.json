@@ -1,0 +1,56 @@
+{
+  "name": "student-registry-sepolia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bai 4.1: deploy StudentRegistry and decode StudentRegistered on Sepolia.",
+  "license": "MIT",
+  "author": "Apps Cyclone",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "npm": ">=11 <12"
+  },
+  "scripts": {
+    "hardhat": "hardhat",
+    "compile": "hardhat build",
+    "test": "hardhat test",
+    "node": "hardhat node --hostname 127.0.0.1",
+    "deploy:localhost": "hardhat ignition deploy ignition/modules/StudentRegistry.ts --network localhost",
+    "preflight:sepolia": "hardhat run scripts/preflight.ts --network sepolia",
+    "predeploy:sepolia": "npm run preflight:sepolia",
+    "deploy:sepolia": "hardhat ignition deploy ignition/modules/StudentRegistry.ts --network sepolia",
+    "verify:sepolia": "hardhat ignition verify chain-11155111 --network sepolia",
+    "register:localhost": "hardhat run scripts/register.ts --network localhost",
+    "register:sepolia": "hardhat run scripts/register.ts --network sepolia",
+    "abi": "hardhat build && hardhat run scripts/export-abi.ts --no-compile",
+    "size": "hardhat build && hardhat run scripts/contract-size.ts --no-compile",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && solhint \"contracts/**/*.sol\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run compile && npm run typecheck && npm run lint && npm run format:check && npm test && npm run abi && npm run size",
+    "smoke": "node scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@nomicfoundation/hardhat-ignition": "3.1.8",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "4.0.0",
+    "@types/chai": "5.2.3",
+    "@types/mocha": "10.0.10",
+    "@types/node": "24.19.2",
+    "chai": "6.3.0",
+    "dotenv": "18.0.7",
+    "eslint": "10.12.0",
+    "ethers": "6.17.0",
+    "hardhat": "3.19.0",
+    "mocha": "12.0.3",
+    "prettier": "3.9.10",
+    "prettier-plugin-solidity": "2.4.1",
+    "solhint": "6.2.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_37-61c8f4803a2a3c048c33fcd6b105680e2f7c57c2",
+  "solcVersion": "0.8.37",
+  "solcLongVersion": "0.8.37+commit.f401782d",
+  "compilerType": "solc",
+  "toolVersions": {
+    "hardhat": "3.19.0"
+  },
+  "userSourceNameMap": {
+    "contracts/StudentRegistry.sol": "project/contracts/StudentRegistry.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode.linkReferences",
+            "evm.bytecode.object",
+            "evm.bytecode.opcodes",
+            "evm.bytecode.sourceMap",
+            "evm.deployedBytecode.immutableReferences",
+            "evm.deployedBytecode.linkReferences",
+            "evm.deployedBytecode.object",
+            "evm.deployedBytecode.opcodes",
+            "evm.deployedBytecode.sourceMap",
+            "evm.methodIdentifiers"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/StudentRegistry.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\n/**\n * @title StudentRegistry\n * @dev Smart contract quản lý việc đăng ký thông tin sinh viên sử dụng Struct và Mapping.\n * Bài 4.1 - Mapping, Struct, Array\n */\ncontract StudentRegistry {\n    // Định nghĩa struct Student chứa thông tin cơ bản của sinh viên\n    struct Student {\n        string name; // Tên sinh viên\n        uint age; // Tuổi sinh viên\n        bool isRegistered; // Trạng thái đã đăng ký (true/false)\n    }\n\n    // Mapping lưu trữ thông tin sinh viên theo địa chỉ ví (address => Student)\n    mapping(address => Student) public students;\n\n    // Sự kiện được phát ra khi một sinh viên đăng ký thành công\n    event StudentRegistered(address indexed user, string name, uint age);\n\n    /**\n     * @notice Đăng ký thông tin cho chính người gọi hàm (caller - msg.sender).\n     * @dev Kiểm tra người dùng chưa đăng ký trước đó và các thông tin đầu vào phải hợp lệ.\n     * @param _name Tên của sinh viên.\n     * @param _age Tuổi của sinh viên.\n     */\n    function register(string memory _name, uint _age) public {\n        // Kiểm tra xem địa chỉ ví này đã đăng ký trước đó hay chưa\n        require(!students[msg.sender].isRegistered, \"Student already registered\");\n\n        // Kiểm tra dữ liệu đầu vào hợp lệ\n        require(bytes(_name).length > 0, \"Name cannot be empty\");\n        require(_age > 0, \"Age must be greater than 0\");\n\n        // Lưu thông tin sinh viên vào mapping theo địa chỉ msg.sender\n        students[msg.sender] = Student({name: _name, age: _age, isRegistered: true});\n\n        // Phát ra sự kiện lưu log trên blockchain\n        emit StudentRegistered(msg.sender, _name, _age);\n    }\n\n    /**\n     * @notice Lấy thông tin sinh viên theo địa chỉ ví `user`.\n     * @param user Địa chỉ ví của sinh viên cần tra cứu.\n     * @return name Tên của sinh viên.\n     * @return age Tuổi của sinh viên.\n     * @return isRegistered Trạng thái đã đăng ký hay chưa.\n     */\n    function getStudent(\n        address user\n    ) public view returns (string memory name, uint age, bool isRegistered) {\n        Student memory s = students[user];\n        return (s.name, s.age, s.isRegistered);\n    }\n\n    /**\n     * @notice Kiểm tra một địa chỉ ví đã đăng ký làm sinh viên hay chưa.\n     * @param user Địa chỉ ví cần kiểm tra.\n     * @return bool Trả về true nếu đã đăng ký, ngược lại trả về false.\n     */\n    function isStudentRegistered(address user) public view returns (bool) {\n        return students[user].isRegistered;\n    }\n}\n"
+      }
+    }
+  }
+}
