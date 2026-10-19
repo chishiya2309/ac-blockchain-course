@@ -1,0 +1,65 @@
+{
+  "network": "sepolia",
+  "chainId": 11155111,
+  "contractName": "MyMintableToken",
+  "symbol": "MMT",
+  "contractAddress": "0xF7583e63f278FceC40FD481792d96e7e7f658605",
+  "deployer": "0xA4CDcB4eFd9D4615586a6d78CB1283656078249c",
+  "owner": "0xA4CDcB4eFd9D4615586a6d78CB1283656078249c",
+  "decimals": 18,
+  "balanceBaseUnits": "1000000000000000000000",
+  "balanceFormatted": "1000.0",
+  "totalSupplyBaseUnits": "1000000000000000000000",
+  "totalSupplyFormatted": "1000.0",
+  "runtimeBytecodeMatchesArtifact": true,
+  "mintEventVerified": true,
+  "deployTransaction": {
+    "hash": "0x4e205a5b980503bf1c77dd3635e96a6a00eb112f6b05fb9d6defecf5bb3abef0",
+    "status": 1,
+    "blockNumber": 11946750,
+    "gasUsed": "3918452",
+    "feeWei": "3918452000000000"
+  },
+  "mintTransaction": {
+    "hash": "0x004617800a8ec142c70a076a7ae10b1c15af660f7499891fa56f78fddf76f17c",
+    "status": 1,
+    "blockNumber": 11946751,
+    "gasUsed": "240742",
+    "feeWei": "240742000000000"
+  },
+  "explorer": {
+    "contract": "https://sepolia.etherscan.io/address/0xF7583e63f278FceC40FD481792d96e7e7f658605",
+    "deploy": "https://sepolia.etherscan.io/tx/0x4e205a5b980503bf1c77dd3635e96a6a00eb112f6b05fb9d6defecf5bb3abef0",
+    "mint": "https://sepolia.etherscan.io/tx/0x004617800a8ec142c70a076a7ae10b1c15af660f7499891fa56f78fddf76f17c"
+  },
+  "versions": {
+    "hardhat": "3.19.0",
+    "solidity": "0.8.37",
+    "openzeppelinContracts": "5.6.1",
+    "ethers": "6.17.0"
+  },
+  "validation": {
+    "compile": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "formatCheck": "passed",
+    "tests": {
+      "total": 25,
+      "solidity": 2,
+      "mocha": 23,
+      "mintableToken": 6
+    },
+    "localScript": "passed",
+    "localDeployTask": "passed",
+    "unsupportedTagRejected": true
+  },
+  "templateIntegrity": {
+    "unchanged": true,
+    "sha256Before": "5408379f7ffe251011f554d9f60457093a1ee1c6da3b42e721363facb57c7248",
+    "sha256After": "5408379f7ffe251011f554d9f60457093a1ee1c6da3b42e721363facb57c7248",
+    "files": 21517,
+    "directories": 3718,
+    "bytes": 493165503
+  },
+  "verifiedAtUTC": "2026-10-19T07:40:44.848Z"
+}

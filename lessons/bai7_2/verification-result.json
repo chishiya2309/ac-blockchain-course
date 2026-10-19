@@ -1,0 +1,93 @@
+{
+  "status": "verified",
+  "network": "sepolia",
+  "chainId": 11155111,
+  "contractAddress": "0xF7583e63f278FceC40FD481792d96e7e7f658605",
+  "contractName": "MyMintableToken",
+  "contractIdentifier": "contracts/MyMintableToken.sol:MyMintableToken",
+  "explorerUrl": "https://sepolia.etherscan.io/address/0xF7583e63f278FceC40FD481792d96e7e7f658605#code",
+  "verification": {
+    "provider": "etherscan",
+    "matchType": "exact",
+    "cliCommand": "npx hardhat verify --network sepolia 0xF7583e63f278FceC40FD481792d96e7e7f658605",
+    "cliExitCode": 0,
+    "cliMessage": "Contract verified successfully on Etherscan!",
+    "sourceCodePublic": true,
+    "constructorArguments": [],
+    "compiler": {
+      "version": "0.8.37",
+      "longVersion": "v0.8.37+commit.f401782d",
+      "buildProfile": "production",
+      "optimizer": { "enabled": true, "runs": 200 },
+      "evmVersion": "cancun"
+    },
+    "dependencies": {
+      "hardhat": "3.19.0",
+      "hardhatVerify": "3.1.2",
+      "openzeppelinContracts": "5.6.1",
+      "ethers": "6.17.0"
+    }
+  },
+  "onchain": {
+    "network": "sepolia",
+    "chainId": 11155111,
+    "contractAddress": "0xF7583e63f278FceC40FD481792d96e7e7f658605",
+    "name": "MyMintableToken",
+    "symbol": "MMT",
+    "owner": "0xA4CDcB4eFd9D4615586a6d78CB1283656078249c",
+    "deployer": "0xA4CDcB4eFd9D4615586a6d78CB1283656078249c",
+    "decimals": 18,
+    "balanceBaseUnits": "1000000000000000000000",
+    "balanceFormatted": "1000.0",
+    "totalSupplyBaseUnits": "1000000000000000000000",
+    "totalSupplyFormatted": "1000.0",
+    "runtimeBytecodeMatchesArtifact": true,
+    "deploymentTransaction": "0x4e205a5b980503bf1c77dd3635e96a6a00eb112f6b05fb9d6defecf5bb3abef0",
+    "mintTransaction": "0x004617800a8ec142c70a076a7ae10b1c15af660f7499891fa56f78fddf76f17c",
+    "originalTransactionsConfirmed": true,
+    "signerCount": 0,
+    "checkedAtUTC": "2026-10-19T08:32:52.387Z"
+  },
+  "validation": {
+    "compileProduction": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "sourceAndLockfileMatchBai71": true,
+    "readContractTab": { "checked": true, "methods": ["owner", "balanceOf", "totalSupply"] },
+    "writeContractTab": { "checked": true, "methods": ["mint"], "walletConnected": false },
+    "newBlockchainTransactionsSent": 0,
+    "formatCheck": "passed",
+    "secretScan": "passed",
+    "dotenvIgnoredByGit": true,
+    "privateKeyRequired": false
+  },
+  "screenshot": {
+    "path": "screenshots/etherscan-verified.jpg",
+    "contentType": "image/jpeg",
+    "width": 1328,
+    "height": 1410,
+    "source": "Actual Etherscan page showing Exact Match, compiler settings and MyMintableToken.sol"
+  },
+  "recordedAtUTC": "2026-10-19T08:37:34.393Z",
+  "integrity": [
+    {
+      "root": "D:/AppsCycloneIntern/ac-hardhat-template",
+      "sha256Before": "09de8fc992045dfcd91117b0b6cf1ae13d3f343dec11eccc0c6e885942502cac",
+      "sha256After": "09de8fc992045dfcd91117b0b6cf1ae13d3f343dec11eccc0c6e885942502cac",
+      "unchanged": true,
+      "files": 21517,
+      "directories": 3718,
+      "bytes": 493165503
+    },
+    {
+      "root": "D:/AppsCycloneIntern/ac-blockchain-course/lessons/bai7_1",
+      "sha256Before": "0de190b2649b5f66d87d9a31cbfb2004a4585c5053a8fb1d232fd8353e3171a8",
+      "sha256After": "0de190b2649b5f66d87d9a31cbfb2004a4585c5053a8fb1d232fd8353e3171a8",
+      "unchanged": true,
+      "files": 67,
+      "directories": 25,
+      "bytes": 778100
+    }
+  ],
+  "updatedAtUTC": "2026-10-19T08:41:54.799Z"
+}
