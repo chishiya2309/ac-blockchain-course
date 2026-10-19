@@ -1,0 +1,16 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+types/
+data/abi/
+gas-stats.json
+*.log
+*.tsbuildinfo
+.env*
+!.env.example
+ignition/deployments/chain-31337/
+ignition/deployments/smoke-*/
+.DS_Store
+
+.npm-cache/
