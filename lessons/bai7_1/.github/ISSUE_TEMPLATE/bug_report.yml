@@ -1,0 +1,23 @@
+name: Bug report
+description: Report a reproducible problem in the template
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include commands and sanitized output. Never include secrets.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Node/npm version, template version and network
+    validations:
+      required: true

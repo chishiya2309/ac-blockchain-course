@@ -1,0 +1,62 @@
+{
+  "name": "ac-hardhat-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An MIT-licensed Hardhat 3 starter with ethers, Solidity, Ignition and OpenZeppelin.",
+  "license": "MIT",
+  "author": "Apps Cyclone",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "npm": ">=11 <12"
+  },
+  "scripts": {
+    "hardhat": "hardhat",
+    "compile": "hardhat build",
+    "clean": "hardhat clean",
+    "test": "hardhat test",
+    "test:gas": "hardhat test --gas-stats --gas-stats-json gas-stats.json",
+    "coverage": "hardhat test --coverage",
+    "node": "hardhat node --hostname 127.0.0.1",
+    "deploy:local": "hardhat ignition deploy ignition/modules/Template.ts --network localhost",
+    "deploy:localhost": "hardhat ignition deploy ignition/modules/Template.ts --network localhost",
+    "deploy:sepolia": "hardhat ignition deploy ignition/modules/Template.ts --network sepolia",
+    "deploy:ethereum": "hardhat ignition deploy ignition/modules/Template.ts --network ethereum",
+    "interact:local": "hardhat run scripts/interact.ts --network localhost",
+    "interact:localhost": "hardhat run scripts/interact.ts --network localhost",
+    "interact:sepolia": "hardhat run scripts/interact.ts --network sepolia",
+    "interact:ethereum": "hardhat run scripts/interact.ts --network ethereum",
+    "verify:sepolia": "hardhat ignition verify chain-11155111 --network sepolia",
+    "verify:ethereum": "hardhat ignition verify chain-1 --network ethereum",
+    "abi": "hardhat build && hardhat run scripts/export-abi.ts --no-compile",
+    "size": "hardhat build && hardhat run scripts/contract-size.ts --no-compile",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && solhint \"contracts/**/*.sol\" \"test/solidity/**/*.sol\"",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run compile && npm run typecheck && npm run lint && npm run format:check && npm test && npm run abi && npm run size",
+    "smoke": "node scripts/smoke.ts"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "5.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@nomicfoundation/hardhat-ignition": "3.1.8",
+    "@nomicfoundation/hardhat-toolbox-mocha-ethers": "4.0.0",
+    "@types/chai": "5.2.3",
+    "@types/mocha": "10.0.10",
+    "@types/node": "24.19.2",
+    "chai": "6.3.0",
+    "dotenv": "18.0.7",
+    "eslint": "10.12.0",
+    "ethers": "6.17.0",
+    "hardhat": "3.19.0",
+    "mocha": "12.0.3",
+    "prettier": "3.9.10",
+    "prettier-plugin-solidity": "2.4.1",
+    "solhint": "6.2.5",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1"
+  }
+}

@@ -71,6 +71,12 @@ Sau khi deploy, mint thêm một NFT bằng ví owner và in địa chỉ sở h
 npx ts-node test.ts
 ```
 
+Hoặc kiểm tra thông tin deployment qua Hardhat script (tương tự template `bai5_2`):
+
+```bash
+npm run test:script
+```
+
 Mỗi lần chạy `test.ts` thành công sẽ tạo thêm một NFT và tốn phí giao dịch Sepolia.
 
 Lần triển khai Sepolia của bài này: contract [`0xfC2Be5a9AF29D36578588a57b87F95ecdAB6F776`](https://sepolia.etherscan.io/address/0xfC2Be5a9AF29D36578588a57b87F95ecdAB6F776), giao dịch deploy [`0xd7f0738d55ef4617e1e3e218db0b0b098c3e74e286a9a34c24112ffb25a26c23`](https://sepolia.etherscan.io/tx/0xd7f0738d55ef4617e1e3e218db0b0b098c3e74e286a9a34c24112ffb25a26c23), giao dịch mint token `1` [`0xfd1aae6def3c8112843ad69cce4a5fb73a540f55654fab0ff2f06580f1530a66`](https://sepolia.etherscan.io/tx/0xfd1aae6def3c8112843ad69cce4a5fb73a540f55654fab0ff2f06580f1530a66).

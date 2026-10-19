@@ -1,0 +1,7 @@
+{
+  "ACTokenModule": {
+    "name": "AC Token",
+    "symbol": "ACT",
+    "initialSupply": "1000000000000000000000000"
+  }
+}
