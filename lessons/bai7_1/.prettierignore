@@ -1,0 +1,11 @@
+node_modules
+package-lock.json
+artifacts
+cache
+coverage
+types
+data
+ignition/deployments
+gas-stats.json
+
+.npm-cache
